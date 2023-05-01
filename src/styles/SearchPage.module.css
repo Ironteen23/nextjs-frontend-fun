@@ -88,7 +88,10 @@
 .search-btn{
     height: 40px;
     border: none;
-    width:10%;
+    background-color: aliceblue;
+    margin-right: 10px;
+    /* width:10%; */
+    /* background-color: #ffffff; */
 }
 
 .search-btn:hover{

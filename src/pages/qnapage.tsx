@@ -116,6 +116,8 @@ export default function Qnapage() {
           handleSubmit={handleSubmit}
           setCurr={setCurr}
           moreData={moreData}
+          view={view}
+          setView={setView}
           setMoreData={setMoreData}
         />
 

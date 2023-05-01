@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../../styles/SearchPage.module.css";
+import search from "../../../public/search.svg";
+import Image from "next/image";
 
 const searchbar = ({ ...props }) => {
   return (
@@ -23,7 +25,7 @@ const searchbar = ({ ...props }) => {
               props.handleSubmit();
             }}
           >
-            SS
+            <Image src={search} alt="search" />
           </button>
         </div>
       </div>

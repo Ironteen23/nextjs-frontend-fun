@@ -121,7 +121,7 @@
 
 .signup-btn{
     /* position: absolute; */
-        width: 451px;
+        width: min(50% ,451px);
         height: 48px;
         border: none;
         margin-left: 10%;
@@ -131,11 +131,11 @@
             font-size: 18px;
             line-height: 22px;
             display: flex;
-            align-items: center;
-            text-align: center;
-        display: flex;
-        justify-content: center;
-            color: #F8FBFF;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #F8FBFF;
     background: #3A7DDE;
     border-radius: 4px;
 }
@@ -171,5 +171,20 @@
     .layout-outer{
         width:100%;
 
+    }
+
+    .view-more-cont{
+        width:100%;
+        margin-left: 0;
+    }
+
+    .signup-btn{
+        margin-left:0;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .signup-btn{
+        font-size: 14px;
     }
 }
