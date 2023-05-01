@@ -197,14 +197,17 @@
 }
 
 
-
+@media screen and (max-width: 800px){
+    .get-started-cont {
+            margin-left: 0;
+        }
+}
 
 @media screen and (max-width:450px) {
     .signup-btn{
         font-size: 14px;
     }
 
-    .get-started-cont{
-        margin-left: 0;
-    }
+    
 }
+

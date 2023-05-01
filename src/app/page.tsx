@@ -9,29 +9,35 @@ export default function Home() {
   return (
     <>
       <div className={styles.grid}>
-        <a
-          href="/qnapage"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            QnA <span>-&gt;</span>
-          </h2>
-          <p>Find In-Depth Answers about JEE Questions .</p>
-        </a>
+        <div className={styles["link-cont"]}>
+          <a
+            href="/qnapage"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <h2>
+              QnA <span>-&gt;</span>
+            </h2>
+            <p>Find In-Depth Answers about JEE Questions .</p>
+          </a>
+        </div>
 
-        <a
-          href="/searchpage"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Search <span>-&gt;</span>
-          </h2>
-          <p>Search and Learn about Various topics</p>
-        </a>
+        <div className={styles["link-cont"]}>
+          <a
+            href="/searchpage"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <h2>
+              Search <span>-&gt;</span>
+            </h2>
+            <p>Search and Learn about Various topics</p>
+          </a>
+        </div>
       </div>
     </>
   );
