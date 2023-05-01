@@ -97,6 +97,7 @@ export default function Qnapage() {
     let extradata = results.splice(1, x);
     setMoreData(extradata);
     console.log("et", extradata);
+    setView(2);
   };
 
   const handleViewMore = () => {
