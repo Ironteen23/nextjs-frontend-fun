@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useMediaQuery, useIsTablet } from "@/lib/utils";
 import Searchbar from "@/components/SearchBar/searchbar";
 
-export default function searchPage() {
+export default function SearchPage() {
   const [data, setData] = useState<any>([]);
   const [moreData, setMoreData] = useState<any>([]);
   const [val, setVal] = useState("");

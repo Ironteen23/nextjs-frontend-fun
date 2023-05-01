@@ -6,7 +6,7 @@ import { useIsTablet, useMediaQuery } from "@/lib/utils";
 
 import QuestionCard from "@/components/questionCard/questionCard";
 
-export default function qnapage() {
+export default function Qnapage() {
   const [val, setVal] = useState("");
   const [curr, setCurr] = useState("");
   const [data, setData] = useState<any>();
