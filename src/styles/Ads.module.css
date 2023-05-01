@@ -1,0 +1,116 @@
+.layout-container{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.neet-cont{
+    /* position: absolute; */
+    height: 174px;
+    width: 280px;
+    background: #CECDFF;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.neet-head{
+    width: 222px;
+        height: 40px;
+    position: relative;
+    top:15px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    /* padding: 5px; */
+        color: #4644F5;
+}
+
+.neet-desc{
+    position: relative;
+        width: 261.71px;
+        height: 55px;
+        top: 20px;  
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+      line-height: 15px;
+    text-align: center;
+    color: #364099;
+    /* padding: 5px; */
+}
+
+.neet-btn{
+    /* position: absolute; */
+            width: 223px;
+            height: 40px;
+           margin-bottom: 13px;
+            background: #3A7DDE;
+            border-radius: 4px;
+            font-size: large;
+}
+
+
+/* ADS LINK COMPONENT */
+
+.ads-link-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ads-link{
+    /* position: relative; */
+        height: 36px;
+        width:280px;
+        margin-top: 15px;
+        background: #ECF4FF;
+        border-radius: 4px;
+        display: flex;
+        /* text-align: center; */
+        align-items: center;
+        justify-content: space-between;
+}
+
+.ads-link-content{
+    font-family: 'Montserrat';
+    position: relative;
+    left:8px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        display: flex;
+        text-transform: capitalize;
+        color: #004BB6;
+}
+
+.ads-link-icon-cont{
+    position: relative;
+    right:10px;
+  
+}
+
+.ads-link-icon-cont:hover{
+    cursor: pointer;
+}
+
+@media  screen and (max-width:800px) {
+
+    .layout-container {
+            display: flex;
+            align-items: center;
+            margin-top:50px;
+            flex-direction: column;
+            /* background-color: red; */
+        }
+}

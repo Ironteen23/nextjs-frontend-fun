@@ -1,0 +1,259 @@
+.answer-card-outer-cont{
+height: 413px;
+width: 90%;
+/* background-color: aqua; */
+    margin-left: 10%;
+    margin-top:10px;
+
+}
+
+.question-cont{
+        width: 100%;
+        height: 34px;
+        /* background-color: red; */
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        color: #000000;
+}
+
+/* tags css */
+
+.questions-Medium-tag-cont {
+    width: 91px;
+    height: 28px;
+    background: #FFFDEC;
+    border-radius: 24px;
+    margin-top: 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+
+    color: #B9A600;
+}
+
+.questions-Easy-tag-cont {
+    width: 91px;
+    height: 28px;
+    background: #F1FFEC;
+    text-align: center;
+    border-radius: 24px;
+    margin-top: 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #5DA444;
+}
+
+.questions-Hard-tag-cont {
+   
+    width: 91px;
+    height: 28px;
+   
+    margin-top: 10px;
+    text-align: center;
+    background: #FFECEC;
+    border-radius: 24px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FF9393;
+}
+
+/* tags css ends */
+
+.answer-outer-cont{
+        width: 100%;
+        height: 311px;
+        display: flex;
+        flex-direction: column;
+        background: #ECF4FF;
+        border-radius: 24px;
+
+}
+
+.soln-head-cont{
+    
+        width: 189px;
+        height: 34px;
+        margin-left: 20px;
+        margin-top: 20px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+    
+        color: #000000;
+}
+
+.answer-cont{
+        width: 80%;
+        text-align: left;
+        height: 175px;
+        /* left: 167px;
+        top: 630px; */
+    margin-top: 20px;
+        margin-left: 20px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    
+        color: #000000;
+}
+
+.bottom-cont{
+    width:100%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bookmark-cont{
+    display: flex;
+    margin-left: 30px;
+    width:161px;
+    justify-content: space-between;
+}
+
+.tutor-btn{
+    box-sizing: border-box;
+    width: 101px;
+    height: 28px;
+    background: #FFFFFF;
+    border: 1px solid #B7D5FF;
+    border-radius: 5px;
+}
+
+.like-dislike-cont{
+    display: flex;
+    margin-right: max(40px, 10%);
+    width:200px;
+    /* background-color: red; */
+    justify-content: space-between;
+    align-items: center;
+    color: #72ACFF;
+}
+
+.likes-cont{
+    display: flex;
+    width:60px;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dislike-cont{
+    display: flex;
+    width: 60px;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:950px) {
+    .like-dislike-cont {
+            display: flex;
+            margin-left: 30px;
+            width: 200px;
+            /* background-color: red; */
+            justify-content: space-between;
+            align-items: center;
+            color: #72ACFF;
+        }
+}
+
+@media  screen and (max-width:800px) {
+
+    .answer-card-outer-cont {
+            height: 413px;
+            width: 100%;
+            /* background-color: aqua; */
+            margin-right: 10%;
+            /* align-items: center; */
+            margin-top: 10px;
+        }
+
+    .answer-outer-cont{
+        border-radius: 0px;
+    }
+
+    .tutor-btn {
+            box-sizing: border-box;
+            width: 81px;
+            height: 28px;
+            background: #FFFFFF;
+            border: 1px solid #B7D5FF;
+            border-radius: 5px;
+    }
+}
+
+@media  screen and (max-width:600px) {
+    .like-dislike-cont {
+            display: flex;
+            margin-right: max(40px, 10%);
+            width: 150px;
+            /* background-color: red; */
+            justify-content: space-between;
+            align-items: center;
+            color: #72ACFF;
+        }
+}
+
+
+@media screen and (max-width:450px) {
+    .like-dislike-cont {
+        display: flex;
+        margin-right: 10px;
+        width: 120px;
+        justify-content: space-between;
+        align-items: center;
+        color: #72ACFF;
+    }
+
+        .bookmark-cont {
+            display: flex;
+            margin-left: 10px;
+            width: 141px;
+            justify-content: space-between;
+        }
+
+        .dislike-cont {
+                    display: flex;
+                    width: 60px;
+
+                    align-items: center;
+                    justify-content: space-evenly;
+        }
+        
+
+                .likes-cont {
+                    display: flex;
+                    width: 60px;
+                    align-items: center;
+                    justify-content: space-evenly;
+                }
+
+
+}

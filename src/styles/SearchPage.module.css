@@ -1,0 +1,117 @@
+
+.page-layout{
+    width: 80%;
+    margin: auto;
+    /* background-color: aqua; */
+}
+
+.searchBar{
+    background-color: aliceblue;
+    /* background-color: red; */
+    width:90%;
+    height:40px;
+    border:none;
+}
+
+.search-bar-cont{
+    width:100%;
+    height:40px;
+    margin: auto;
+    display: flex;
+   
+}
+
+.search-bar-outer {
+    width: 80%;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px !important;
+}
+
+
+.looking-for-cont{
+    font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+    
+        color: #000000;
+}
+
+
+
+
+.results-outer-cont {
+    width: 75%;
+    min-height: 200px;
+    /* background-color: red; */
+}
+
+.results-cont{
+    width:90%;
+    /* background-color: aqua; */
+}
+
+.results-title{
+    font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 32px;
+    
+        color: #004BB6;
+}
+
+.results-desc{
+    font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: -12px;
+        color: #000000;
+}
+
+.ans-layout-cont {
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    margin-top: 70px;
+}
+
+.search-btn{
+    height: 40px;
+    border: none;
+    width:10%;
+}
+
+.search-btn:hover{
+    cursor: pointer;
+}
+
+@media screen  and (max-width:800px){
+    .results-outer-cont{
+        width: 100%;
+        margin: auto;
+    }
+
+    .ans-layout-cont {
+            width: 100%;
+            /* background-color: orange; */
+            display: flex;
+            margin-top: 70px;
+            justify-content: center;
+        }
+
+        .results-cont 
+        {
+            width: 95%;
+        /* background-color: aqua; */
+        }
+}
