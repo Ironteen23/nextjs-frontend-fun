@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useMediaQuery, useIsTablet } from "@/lib/utils";
 import Searchbar from "@/components/SearchBar/searchbar";
 
-const searchPage = () => {
+export default function searchPage() {
   const [data, setData] = useState<any>([]);
   const [moreData, setMoreData] = useState<any>([]);
   const [val, setVal] = useState("");
@@ -168,6 +168,4 @@ const searchPage = () => {
       </div>
     </>
   );
-};
-
-export default searchPage;
+}

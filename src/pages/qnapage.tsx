@@ -6,7 +6,7 @@ import { useIsTablet, useMediaQuery } from "@/lib/utils";
 
 import QuestionCard from "@/components/questionCard/questionCard";
 
-const qnapage = () => {
+export default function qnapage() {
   const [val, setVal] = useState("");
   const [curr, setCurr] = useState("");
   const [data, setData] = useState<any>();
@@ -168,6 +168,6 @@ const qnapage = () => {
       </div>
     </>
   );
-};
+}
 
-export default qnapage;
+// export default qnapage;
