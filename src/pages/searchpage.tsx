@@ -147,7 +147,7 @@ export default function SearchPage() {
               <div className={styles["results-cont"]}>
                 {data.map((item) => {
                   return (
-                    <div id={data.id}>
+                    <div key={data.id}>
                       <h3 style={{ color: "#004BB6" }}>{item.title}</h3>
                       <p className={styles["results-desc"]}>{item.desc}</p>
                     </div>
