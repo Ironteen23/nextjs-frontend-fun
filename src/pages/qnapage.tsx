@@ -127,6 +127,23 @@ export default function Qnapage() {
             <br />
             <div className={styles["questions-head-cont"]}>QUESTIONS</div>
 
+            {val === "" && !data ? (
+              <div
+                style={{
+                  marginTop: "100px",
+                  width: "80%",
+                  fontSize: "2rem",
+                  marginLeft: "10%",
+                  height: "140px",
+                  backgroundColor: "grey",
+                  borderRadius: "20px",
+                  textAlign: "center",
+                }}
+              >
+                Please search to get started
+              </div>
+            ) : null}
+
             {data && data.length > 0 ? (
               <div className={styles["results-cont"]}>
                 {data.map((item) => {

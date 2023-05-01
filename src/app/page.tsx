@@ -8,16 +8,6 @@ import { Children } from "react";
 export default function Home() {
   return (
     <>
-      {/* <div style={{ marginTop: "10px" }}>
-        <Link href="/qnapage">
-          <h1 className={styles.title}>THIS IS LINK TO SEARCHPAGE</h1>
-        </Link>
-
-        <h1 className={styles.title}>
-          <Link href="/searchpage">THIS IS LINK TO QNA PORTION</Link>
-        </h1>
-      </div> */}
-
       <div className={styles.grid}>
         <a
           href="/qnapage"
