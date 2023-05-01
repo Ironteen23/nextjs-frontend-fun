@@ -78,7 +78,7 @@ export default function Qnapage() {
       chapter: 2,
       question: "What is the role of health in human capital formation?",
       answer:
-        "Role of health in human capital formation are as follow Only a healthy person can work efficiently and with full potential.  A healthy person can work in a more effective manner.  A healthy person can work in a productive way and in this way it can contribute better in the development of the economy of the country  The unhealthy person becomes a liability for the organization and country.  Thus for the development of human capital and country the health is the most important ",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt placeat consequatur velit magnam? Minima dicta doloremque maxime expedita dignissimos nisi animi quo rem similique, voluptatem nihil.",
       like: 953,
       dislike: 334,
     },
@@ -128,18 +128,7 @@ export default function Qnapage() {
             <div className={styles["questions-head-cont"]}>QUESTIONS</div>
 
             {val === "" && !data ? (
-              <div
-                style={{
-                  marginTop: "100px",
-                  width: "80%",
-                  fontSize: "2rem",
-                  marginLeft: "10%",
-                  height: "140px",
-                  backgroundColor: "grey",
-                  borderRadius: "20px",
-                  textAlign: "center",
-                }}
-              >
+              <div className={styles["get-started-cont"]}>
                 Please search to get started
               </div>
             ) : null}

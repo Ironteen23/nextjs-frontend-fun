@@ -183,8 +183,28 @@
     }
 }
 
+.get-started-cont{
+    
+                margin-top: 100px;
+                width: 80%;
+                font-size: 2rem;
+                margin-left: 10%;
+                height: 140px;
+                background-color: grey;
+                border-radius: 20px;
+                text-align: center;
+          
+}
+
+
+
+
 @media screen and (max-width:450px) {
     .signup-btn{
         font-size: 14px;
+    }
+
+    .get-started-cont{
+        margin-left: 0;
     }
 }
