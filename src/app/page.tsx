@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <div className={styles.grid}>
         <div className={styles["link-cont"]}>
-          <a
+          <Link
             href="/qnapage"
             className={styles.card}
             target="_blank"
@@ -21,11 +21,11 @@ export default function Home() {
               QnA <span>-&gt;</span>
             </h2>
             <p>Find In-Depth Answers about JEE Questions .</p>
-          </a>
+          </Link>
         </div>
 
         <div className={styles["link-cont"]}>
-          <a
+          <Link
             href="/searchpage"
             className={styles.card}
             target="_blank"
@@ -36,7 +36,7 @@ export default function Home() {
               Search <span>-&gt;</span>
             </h2>
             <p>Search and Learn about Various topics</p>
-          </a>
+          </Link>
         </div>
       </div>
     </>

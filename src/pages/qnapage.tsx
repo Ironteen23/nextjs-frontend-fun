@@ -12,6 +12,7 @@ export default function Qnapage() {
   const [data, setData] = useState<any>();
   const [moreData, setMoreData] = useState<any>();
   const [view, setView] = useState(2);
+  const [topic, setTopic] = useState("");
   const isTablet = useIsTablet();
   //   const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -82,21 +83,60 @@ export default function Qnapage() {
       like: 953,
       dislike: 334,
     },
+    {
+      id: 7,
+      tag: "Hard",
+      topic: "History",
+      chapter: 2,
+      question: "When did World War2 begin ?",
+      answer:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt placeat consequatur velit magnam? Minima dicta doloremque maxime expedita dignissimos nisi animi quo rem similique, voluptatem nihil.",
+      like: 953,
+      dislike: 334,
+    },
+    {
+      id: 8,
+      tag: "Medium",
+      topic: "History",
+      chapter: 2,
+      question: "What is the role of health in human capital formation?",
+      answer:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt placeat consequatur velit magnam? Minima dicta doloremque maxime expedita dignissimos nisi animi quo rem similique, voluptatem nihil.",
+      like: 953,
+      dislike: 334,
+    },
+    {
+      id: 9,
+      tag: "Easy",
+      topic: "History",
+      chapter: 2,
+      question: "What was the main factor causing World War 1 ?",
+      answer:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt placeat consequatur velit magnam? Minima dicta doloremque maxime expedita dignissimos nisi animi quo rem similique, voluptatem nihil.",
+      like: 953,
+      dislike: 334,
+    },
   ];
 
   const handleSubmit = () => {
     setData((prev) => {
       return results.filter((item) => {
         if (item.topic.toLowerCase().includes(val.toLowerCase())) {
+          setTopic(item.topic);
           return item;
         }
       });
     });
+    console.log("Success", val);
+    console.log("data", data);
 
-    let x = results.length;
-    let extradata = results.splice(1, x);
-    setMoreData(extradata);
-    console.log("et", extradata);
+    setMoreData((prev) => {
+      return results.filter((item, i) => {
+        if (item.topic.toLowerCase().includes(val.toLowerCase())) {
+          return item;
+        }
+      });
+    });
     setView(2);
   };
 
@@ -123,7 +163,7 @@ export default function Qnapage() {
 
         <div className={styles["ans-layout-cont"]}>
           <div className={styles["results-outer-cont"]}>
-            <div className={styles["topic-cont"]}>DEFINITE INTEGRAL</div>
+            <div className={styles["topic-cont"]}>{topic}</div>
             <br />
             <div className={styles["questions-head-cont"]}>QUESTIONS</div>
 
@@ -135,17 +175,18 @@ export default function Qnapage() {
 
             {data && data.length > 0 ? (
               <div className={styles["results-cont"]}>
-                {data.map((item) => {
-                  return <QuestionCard {...item} key={item.id} />;
+                {data.map((item, i) => {
+                  if (i < 1) return <QuestionCard {...item} key={item.id} />;
+                  else return;
                 })}
                 <div className={styles["sim-questions-outer-cont"]}>
                   <div className={styles["sim-ques-head"]}>
                     SIMILAR QUESTIONS
                   </div>
-                  {moreData.map((item, i) => {
+                  {moreData?.map((item, i) => {
                     return (
                       <>
-                        {view > i ? (
+                        {view > i && i > 0 ? (
                           <QuestionCard {...item} key={item.id} />
                         ) : null}
                         {/* <QuestionCard {...item} key={item.id} /> */}
