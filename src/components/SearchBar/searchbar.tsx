@@ -10,13 +10,11 @@ const searchbar = ({ ...props }) => {
         <div className={styles["search-bar-cont"]}>
           <input
             type="text"
-            placeholder="    Search for something"
+            placeholder="    Search for Chapter , Questions"
             className={styles.searchBar}
             onChange={(e) => {
               props.setVal(e.target.value);
-
               props.setCurr("");
-              //   console.log(val);
             }}
           />
           <button

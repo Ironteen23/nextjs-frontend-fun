@@ -4,6 +4,8 @@ import Image from "next/image";
 import like from "../../../public/like.svg";
 import dislike from "../../../public/dislike.svg";
 import bookmark from "../../../public/bookmark.svg";
+import { Montserrat } from "next/font/google";
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 const answerCard = ({ ...props }) => {
   return (

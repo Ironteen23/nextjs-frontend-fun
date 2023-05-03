@@ -1,13 +1,14 @@
 import Image from "next/image";
-import styles from "./page.module.css";
-import RootLayout from "./layout";
+import styles from "../app/page.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Navbar from "@/components/Navbar/Navbar";
 import { Children } from "react";
 
 export default function Home() {
   return (
     <>
+      {/* <Navbar /> */}
       <div className={styles.grid}>
         <div className={styles["link-cont"]}>
           <Link

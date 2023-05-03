@@ -3,8 +3,10 @@ import styles from "../styles/QnaPage.module.css";
 import SearchBar from "@/components/SearchBar/searchbar";
 import Ads from "@/components/Ads/ads";
 import { useIsTablet, useMediaQuery } from "@/lib/utils";
-
 import QuestionCard from "@/components/questionCard/questionCard";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Qnapage() {
   const [val, setVal] = useState("");
@@ -14,6 +16,8 @@ export default function Qnapage() {
   const [view, setView] = useState(2);
   const [topic, setTopic] = useState("");
   const isTablet = useIsTablet();
+  const [ismore, setIsMore] = useState(true);
+  const [length, setLength] = useState(0);
   //   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const results = [
@@ -135,86 +139,143 @@ export default function Qnapage() {
         if (item.topic.toLowerCase().includes(val.toLowerCase())) {
           return item;
         }
+        // setLength(moreData?.length);
       });
     });
     setView(2);
+
+    // setLength(moreData?.length);
   };
 
   const handleViewMore = () => {
+    setLength(moreData.length);
+
+    if (length <= view + 2) {
+      setIsMore(false);
+    }
+
     setView((prev) => {
       return prev + 2;
     });
+
+    console.log("views", view);
+    console.log("length", length);
+    // setIsMore(true);
+    if (length <= view) {
+      setIsMore(false);
+    }
   };
 
-  // const [active, setActive] = useState("-1");
+  const handleViewLess = () => {
+    if (length > view - 2) {
+      setIsMore(true);
+    }
+
+    setView((prev) => {
+      return prev - 2;
+    });
+
+    console.log("viewsless ", view);
+  };
 
   return (
     <>
-      <div className={styles["layout-outer"]}>
-        <SearchBar
-          setVal={setVal}
-          handleSubmit={handleSubmit}
-          setCurr={setCurr}
-          moreData={moreData}
-          view={view}
-          setView={setView}
-          setMoreData={setMoreData}
-        />
+      <div className={montserrat.className}>
+        <div className={styles["layout-outer"]}>
+          <SearchBar
+            setVal={setVal}
+            handleSubmit={handleSubmit}
+            setCurr={setCurr}
+            moreData={moreData}
+            view={view}
+            setView={setView}
+            setMoreData={setMoreData}
+          />
 
-        <div className={styles["ans-layout-cont"]}>
-          <div className={styles["results-outer-cont"]}>
-            <div className={styles["topic-cont"]}>{topic}</div>
-            <br />
-            <div className={styles["questions-head-cont"]}>QUESTIONS</div>
+          <div className={styles["ans-layout-cont"]}>
+            <div className={styles["results-outer-cont"]}>
+              <div className={styles["topic-cont"]}>{topic}</div>
+              <br />
+              <div className={styles["questions-head-cont"]}>QUESTIONS</div>
+              <br />
+              {val === "" && !data ? (
+                <div className={styles["get-started-cont"]}>
+                  Please search to get started
+                </div>
+              ) : null}
+              <br />
 
-            {val === "" && !data ? (
-              <div className={styles["get-started-cont"]}>
-                Please search to get started
-              </div>
-            ) : null}
-
-            {data && data.length > 0 ? (
-              <div className={styles["results-cont"]}>
-                {data.map((item, i) => {
-                  if (i < 1) return <QuestionCard {...item} key={item.id} />;
-                  else return;
-                })}
-                <div className={styles["sim-questions-outer-cont"]}>
-                  <div className={styles["sim-ques-head"]}>
-                    SIMILAR QUESTIONS
-                  </div>
-                  {moreData?.map((item, i) => {
-                    return (
-                      <>
-                        {view > i && i > 0 ? (
-                          <QuestionCard {...item} key={item.id} />
-                        ) : null}
-                        {/* <QuestionCard {...item} key={item.id} /> */}
-                      </>
-                    );
+              {data && data.length > 0 ? (
+                <div className={styles["results-cont"]}>
+                  {data.map((item, i) => {
+                    if (i < 1) return <QuestionCard {...item} key={item.id} />;
+                    else return;
                   })}
                   <br />
+                  <br />
                   <div
-                    className={styles["view-more-cont"]}
-                    onClick={() => handleViewMore()}
-                  >
-                    <div className={styles["view-more-head"]}>View More</div>
+                    style={{
+                      borderTop: "1px solid #DCDCDC",
+                      marginLeft: 70,
+                    }}
+                  />
+                  <br />
+                  <br />
+
+                  <div className={styles["sim-questions-outer-cont"]}>
+                    <div className={styles["sim-ques-head"]}>
+                      SIMILAR QUESTIONS
+                    </div>
+                    <br />
+                    {moreData?.map((item, i) => {
+                      return (
+                        <>
+                          {view > i && i > 0 ? (
+                            <QuestionCard {...item} key={item.id} />
+                          ) : null}
+                          {/* <QuestionCard {...item} key={item.id} /> */}
+                        </>
+                      );
+                    })}
+                    <br />
+
+                    {ismore ? (
+                      <div
+                        className={styles["view-more-cont"]}
+                        onClick={() => handleViewMore()}
+                      >
+                        <div className={styles["view-more-head"]}>
+                          View More{" "}
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        className={styles["view-more-cont"]}
+                        onClick={() => handleViewLess()}
+                      >
+                        <div className={styles["view-more-head"]}>
+                          View Less{" "}
+                        </div>
+                      </div>
+                    )}
                   </div>
+                  <br />
+                  <button className={styles["signup-btn"]}>
+                    <div style={{ textAlign: "center" }}>
+                      Sign Up To Continue
+                    </div>
+                  </button>
                 </div>
-                <br />
-                <button className={styles["signup-btn"]}>
-                  <div style={{ textAlign: "center" }}>Sign Up To Continue</div>
-                </button>
-              </div>
-            ) : (
-              <>{/* <div style={{ fontSize: "3rem " }}>NO RESULTS</div> */}</>
-            )}
+              ) : (
+                <>{/* <div style={{ fontSize: "3rem " }}>NO RESULTS</div> */}</>
+              )}
+            </div>
+
+            {isTablet ? <Ads /> : null}
           </div>
 
-          {isTablet ? <Ads /> : null}
+          {!isTablet && <Ads />}
         </div>
-
-        {!isTablet && <Ads />}
       </div>
     </>
   );

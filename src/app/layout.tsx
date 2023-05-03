@@ -1,9 +1,11 @@
 // import "./globals.css";
 import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "EdTech Company",
@@ -17,8 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      {/* <Navbar /> */}
-      {children}
+      <main className={montserrat.className}>{children}</main>
       {/* <Footer /> */}
     </>
   );

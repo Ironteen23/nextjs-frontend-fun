@@ -4,6 +4,9 @@ import Ads from "@/components/Ads/ads";
 import { useState } from "react";
 import { useMediaQuery, useIsTablet } from "@/lib/utils";
 import Searchbar from "@/components/SearchBar/searchbar";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function SearchPage() {
   const [data, setData] = useState<any>([]);
@@ -123,48 +126,50 @@ export default function SearchPage() {
 
   return (
     <>
-      <div className={styles["page-layout"]}>
-        <Searchbar
-          handleSubmit={handleSubmit}
-          curr={curr}
-          setVal={setVal}
-          setCurr={setCurr}
-          moreData={moreData}
-          setMoreData={setMoreData}
-        />
+      <div className={montserrat.className}>
+        <div className={styles["page-layout"]}>
+          <Searchbar
+            handleSubmit={handleSubmit}
+            curr={curr}
+            setVal={setVal}
+            setCurr={setCurr}
+            moreData={moreData}
+            setMoreData={setMoreData}
+          />
 
-        <div className={styles["ans-layout-cont"]}>
-          <div className={styles["results-outer-cont"]}>
-            {curr ? (
-              <div className={styles["looking-for-cont"]}>
-                Showing results for "{val}"
-              </div>
-            ) : (
-              <div>Please Search </div>
-            )}
+          <div className={styles["ans-layout-cont"]}>
+            <div className={styles["results-outer-cont"]}>
+              {curr ? (
+                <div className={styles["looking-for-cont"]}>
+                  Showing results for "{val}"
+                </div>
+              ) : (
+                <div>Please Search </div>
+              )}
 
-            {data && data.length > 0 ? (
-              <div className={styles["results-cont"]}>
-                {data.map((item) => {
-                  return (
-                    <div key={data.id}>
-                      <h3 style={{ color: "#004BB6" }}>{item.title}</h3>
-                      <p className={styles["results-desc"]}>{item.desc}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <>
-                <div style={{ fontSize: "3rem " }}>NO RESULTS</div>
-              </>
-            )}
+              {data && data.length > 0 ? (
+                <div className={styles["results-cont"]}>
+                  {data.map((item) => {
+                    return (
+                      <div key={data.id}>
+                        <h3 style={{ color: "#004BB6" }}>{item.title}</h3>
+                        <p className={styles["results-desc"]}>{item.desc}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <>
+                  <div style={{ fontSize: "3rem " }}>NO RESULTS</div>
+                </>
+              )}
+            </div>
+
+            {isTablet ? <Ads /> : null}
           </div>
 
-          {isTablet ? <Ads /> : null}
+          {!isTablet && <Ads />}
         </div>
-
-        {!isTablet && <Ads />}
       </div>
     </>
   );
