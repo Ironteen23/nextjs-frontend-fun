@@ -38,6 +38,9 @@ margin-top:10px;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
     align-items: center;
     text-align: center;
     color: #B9A600;
@@ -46,6 +49,9 @@ margin-top:10px;
 .questions-Easy-tag-cont {
     width: 91px;
     height: 28px;
+    display: flex;
+        align-items: center;
+        justify-content: center;
         margin-left: 3%;
     background: #F1FFEC;
     text-align: center;
@@ -56,13 +62,14 @@ margin-top:10px;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    align-items: center;
     text-align: center;
     color: #5DA444;
 }
 
 .questions-Hard-tag-cont {
-   
+    display: flex;
+        align-items: center;
+        justify-content: center;
     width: 91px;
     height: 28px;
         margin-left: 3%;
@@ -211,6 +218,12 @@ margin-top:10px;
             background: #FFFFFF;
             border: 1px solid #B7D5FF;
             border-radius: 5px;
+    }
+
+    .answer-cont{
+        font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
     }
 }
 

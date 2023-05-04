@@ -193,7 +193,7 @@
     height: min(600px , 80vw);
     min-height: 300px;
     width:90%;
-    background-color: grey;
+    /* background-color: grey; */
     border-radius: 20px;
     text-align: center;
     overflow: hidden;

@@ -37,7 +37,9 @@ const QuestionCard = ({
       {val?.id !== id ? (
         <div key={id} className={styles["results-ind-cont"]}>
           <div className={styles["questions-ind-cont"]}>{question}</div>
-          <div className={styles[`questions-${tag}-tag-cont`]}>{tag}</div>
+          <div className={styles[`questions-${tag}-tag-cont`]}>
+            <div>{tag}</div>
+          </div>
 
           <div
             className={styles["view-soln-outer-cont"]}

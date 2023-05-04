@@ -12,7 +12,7 @@ const answerCard = ({ ...props }) => {
     <div className={styles["answer-card-outer-cont"]}>
       <div className={styles["question-cont"]}>{props.question}</div>
       <div className={styles[`questions-${props.tag}-tag-cont`]}>
-        {props.tag}
+        <div>{props.tag}</div>
       </div>
       <br></br>
       <div className={styles["answer-outer-cont"]}>
