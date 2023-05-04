@@ -24,7 +24,13 @@ const searchbar = ({ ...props }) => {
               props.setCurr("#");
             }}
           >
-            <Image src={search} alt="search" />
+            <Image
+              src={search}
+              alt="search"
+              height={18}
+              width={18}
+              style={{ marginRight: "10px" }}
+            />
           </button>
         </div>
       </div>

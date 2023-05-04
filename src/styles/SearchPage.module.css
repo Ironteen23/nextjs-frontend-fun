@@ -54,6 +54,35 @@
         color: #000000;
 }
 
+.get-started-cont {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-top: 30px;
+    font-size: 2rem;
+    height: min(600px, 80vw);
+    min-height: 300px;
+    width: 90%;
+    /* background-color: grey; */
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.no-results-outer-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 2rem;
+    /* height: auto; */
+    width: 90%;
+}
 
 
 
@@ -108,11 +137,21 @@
     cursor: pointer;
 }
 
+.get-started-head{
+    font-size: 2rem;
+    margin-left:25%;
+    /* margin-right:auto; */
+}
+
 @media screen  and (max-width:800px){
     .results-outer-cont{
         width: 100%;
         margin: auto;
     }
+
+         .get-started-cont {
+             margin-left: 0;
+         }
 
     .ans-layout-cont {
             width: 100%;

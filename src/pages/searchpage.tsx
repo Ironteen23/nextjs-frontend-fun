@@ -2,9 +2,12 @@ import React from "react";
 import styles from "../styles/SearchPage.module.css";
 import Ads from "@/components/Ads/ads";
 import { useState } from "react";
-import { useMediaQuery, useIsTablet } from "@/lib/utils";
+import { useMediaQuery, useIsTablet } from "../lib/utils";
 import Searchbar from "@/components/SearchBar/searchbar";
+import get_started from "../../public/get_started.jpg";
+import no_results from "../../public/no_results.jpg";
 import { Montserrat } from "next/font/google";
+import Image from "next/image";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -13,7 +16,7 @@ export default function SearchPage() {
   const [moreData, setMoreData] = useState<any>([]);
   const [val, setVal] = useState("");
   const [curr, setCurr] = useState("");
-
+  const isMobile = useMediaQuery("(max-width: 450px)");
   const isTablet = useIsTablet();
 
   const results = [
@@ -144,25 +147,78 @@ export default function SearchPage() {
                   Showing results for "{val}"
                 </div>
               ) : (
-                <div>Please Search </div>
-              )}
-
-              {data && data.length > 0 ? (
-                <div className={styles["results-cont"]}>
-                  {data.map((item) => {
-                    return (
-                      <div key={data.id}>
-                        <h3 style={{ color: "#004BB6" }}>{item.title}</h3>
-                        <p className={styles["results-desc"]}>{item.desc}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
                 <>
-                  <div style={{ fontSize: "3rem " }}>NO RESULTS</div>
+                  <div className={styles["get-started-cont"]}>
+                    {isMobile ? (
+                      <Image
+                        src={get_started}
+                        alt="get started"
+                        height={400}
+                        style={{ objectFit: "contain" }}
+                      />
+                    ) : (
+                      <Image
+                        src={get_started}
+                        alt="get started"
+                        height={720}
+                        style={{ objectFit: "contain" }}
+                      />
+                    )}
+                  </div>
+                  <div className={styles["get-started-head"]}>
+                    Getting Started
+                  </div>
                 </>
               )}
+
+              {
+                data && data.length > 0 ? (
+                  <div className={styles["results-cont"]}>
+                    {data.map((item) => {
+                      return (
+                        <>
+                          <br />
+                          <div key={data.id}>
+                            <h3 style={{ color: "#004BB6" }}>{item.title}</h3>
+                            <p className={styles["results-desc"]}>
+                              {item.desc}
+                            </p>
+                          </div>
+                          <br />
+                        </>
+                      );
+                    })}
+                  </div>
+                ) : curr === "#" ? (
+                  <div className={styles["no-results-outer-cont"]}>
+                    {isMobile ? (
+                      <Image
+                        src={no_results}
+                        alt="no_results"
+                        //   width={400}
+                        height={200}
+                      />
+                    ) : (
+                      <Image src={no_results} alt="no_results" height={400} />
+                    )}
+                    NO RESULTS FOUND
+                  </div>
+                ) : null
+
+                // <div className={styles["no-results-outer-cont"]}>
+                //   {isMobile ? (
+                //     <Image
+                //       src={no_results}
+                //       alt="no_results"
+                //       //   width={400}
+                //       height={200}
+                //     />
+                //   ) : (
+                //     <Image src={no_results} alt="no_results" height={400} />
+                //   )}
+                //   NO RESULTS FOUND
+                // </div>
+              }
             </div>
 
             {isTablet ? <Ads /> : null}

@@ -58,6 +58,7 @@
             background: #3A7DDE;
             border-radius: 4px;
             font-size: large;
+            border:none;
 }
 
 
@@ -113,4 +114,8 @@
             flex-direction: column;
             /* background-color: red; */
         }
+
+    .neet-btn{
+        font-size: medium;
+    }
 }
