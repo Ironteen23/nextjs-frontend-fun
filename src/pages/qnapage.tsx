@@ -1,9 +1,14 @@
+// "use client"; // this is a client component 👈🏽
 import React, { useState } from "react";
+// import styles from "../../styles/QnaPage.module.css";
 import styles from "../styles/QnaPage.module.css";
-import SearchBar from "@/components/SearchBar/searchbar";
-import Ads from "@/components/Ads/ads";
-import { useIsTablet, useMediaQuery } from "@/lib/utils";
-import QuestionCard from "@/components/questionCard/questionCard";
+import SearchBar from "../components/SearchBar/searchbar";
+import Ads from "../components/Ads/ads";
+import { useIsTablet, useMediaQuery } from "../lib/utils";
+import QuestionCard from "../components/questionCard/questionCard";
+import get_started from "../../public/get_started.jpg";
+import no_results from "../../public/no_results.jpg";
+import Image from "next/image";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -18,7 +23,7 @@ export default function Qnapage() {
   const isTablet = useIsTablet();
   const [ismore, setIsMore] = useState(true);
   const [length, setLength] = useState(0);
-  //   const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 450px)");
 
   const results = [
     {
@@ -143,7 +148,6 @@ export default function Qnapage() {
       });
     });
     setView(2);
-
     // setLength(moreData?.length);
   };
 
@@ -194,13 +198,33 @@ export default function Qnapage() {
 
           <div className={styles["ans-layout-cont"]}>
             <div className={styles["results-outer-cont"]}>
-              <div className={styles["topic-cont"]}>{topic}</div>
+              <div className={styles["topic-cont"]}>
+                {topic ? topic : <>Lets Get Started</>}
+              </div>
               <br />
               <div className={styles["questions-head-cont"]}>QUESTIONS</div>
               <br />
-              {val === "" && !data ? (
+              {curr === "" && !data ? (
                 <div className={styles["get-started-cont"]}>
-                  Please search to get started
+                  {isMobile ? (
+                    <Image
+                      src={get_started}
+                      alt="get started"
+                      // loading="lazy"
+                      //   width={800}
+                      height={400}
+                      style={{ objectFit: "contain" }}
+                    />
+                  ) : (
+                    <Image
+                      src={get_started}
+                      alt="get started"
+                      // loading="lazy"
+                      //   width={800}
+                      height={700}
+                      //   style={{ objectFit: "contain" }}
+                    />
+                  )}
                 </div>
               ) : null}
               <br />
@@ -231,7 +255,10 @@ export default function Qnapage() {
                       return (
                         <>
                           {view > i && i > 0 ? (
-                            <QuestionCard {...item} key={item.id} />
+                            <>
+                              <QuestionCard {...item} key={item.id} />
+                              <br />
+                            </>
                           ) : null}
                           {/* <QuestionCard {...item} key={item.id} /> */}
                         </>
@@ -266,8 +293,26 @@ export default function Qnapage() {
                     </div>
                   </button>
                 </div>
+              ) : curr !== "" || val === "" ? (
+                <></>
               ) : (
-                <>{/* <div style={{ fontSize: "3rem " }}>NO RESULTS</div> */}</>
+                <>
+                  {
+                    <div className={styles["no-results-outer-cont"]}>
+                      {isMobile ? (
+                        <Image
+                          src={no_results}
+                          alt="no_results"
+                          //   width={400}
+                          height={200}
+                        />
+                      ) : (
+                        <Image src={no_results} alt="no_results" height={400} />
+                      )}
+                      NO RESULTS FOUND
+                    </div>
+                  }
+                </>
               )}
             </div>
 

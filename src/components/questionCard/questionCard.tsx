@@ -44,7 +44,13 @@ const QuestionCard = ({
             onClick={() => handleClick({ id })}
           >
             <div className={styles["view-soln-inner-cont"]}>View Solution</div>
-            <Image src={pic1} alt="view" width={21} height={13} />
+            <Image
+              src={pic1}
+              alt="view"
+              width={21}
+              height={13}
+              style={{ marginRight: "15px" }}
+            />
           </div>
 
           {/* {val?.id === id ? <div>LOL TP</div> : null} */}

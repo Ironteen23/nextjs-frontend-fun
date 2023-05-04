@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <main className={montserrat.className}>{children}</main>
+      <div className={montserrat.className}>{children}</div>
       {/* <Footer /> */}
     </>
   );

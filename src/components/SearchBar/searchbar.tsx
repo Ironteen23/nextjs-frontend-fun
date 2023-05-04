@@ -14,13 +14,14 @@ const searchbar = ({ ...props }) => {
             className={styles.searchBar}
             onChange={(e) => {
               props.setVal(e.target.value);
-              props.setCurr("");
+              // props.setCurr("");
             }}
           />
           <button
             className={styles["search-btn"]}
             onClick={() => {
               props.handleSubmit();
+              props.setCurr("");
             }}
           >
             <Image src={search} alt="search" />
