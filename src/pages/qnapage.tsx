@@ -203,8 +203,16 @@ export default function Qnapage() {
               </div>
               <br />
               <div className={styles["questions-head-cont"]}>QUESTIONS</div>
+
+              {/* //{" "}
+              <div className={styles["topic-cont"]}>
+                // {topic ? topic : <>Lets Get Started</>}
+                //{" "}
+              </div>
+              // <br />
+              // <div className={styles["questions-head-cont"]}>QUESTIONS</div> */}
               <br />
-              {curr === "" && !data ? (
+              {(curr === "" || val === "") && !data ? (
                 <div className={styles["get-started-cont"]}>
                   {isMobile ? (
                     <Image
@@ -228,7 +236,6 @@ export default function Qnapage() {
                 </div>
               ) : null}
               <br />
-
               {data && data.length > 0 ? (
                 <div className={styles["results-cont"]}>
                   {data.map((item, i) => {
@@ -293,7 +300,7 @@ export default function Qnapage() {
                     </div>
                   </button>
                 </div>
-              ) : curr !== "" || val === "" ? (
+              ) : curr !== "#" || val === "" ? (
                 <></>
               ) : (
                 <>

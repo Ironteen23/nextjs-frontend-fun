@@ -21,7 +21,7 @@ const searchbar = ({ ...props }) => {
             className={styles["search-btn"]}
             onClick={() => {
               props.handleSubmit();
-              props.setCurr("");
+              props.setCurr("#");
             }}
           >
             <Image src={search} alt="search" />
