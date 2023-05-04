@@ -128,6 +128,8 @@ export default function Qnapage() {
   ];
 
   const handleSubmit = () => {
+    setTopic("No Results");
+
     setData((prev) => {
       return results.filter((item) => {
         if (item.topic.toLowerCase().includes(val.toLowerCase())) {
