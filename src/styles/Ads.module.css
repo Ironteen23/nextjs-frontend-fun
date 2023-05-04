@@ -57,8 +57,14 @@
            margin-bottom: 13px;
             background: #3A7DDE;
             border-radius: 4px;
-            font-size: large;
+            /* font-size: large; */
             border:none;
+            font-size: 18px;
+                line-height: 22px;
+                /* display: flex;
+                align-items: center; */
+                text-align: center;
+                color: #F8FBFF;
 }
 
 

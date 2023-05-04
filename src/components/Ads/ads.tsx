@@ -14,7 +14,7 @@ const Ads = () => {
           <div className={styles["neet-desc"]}>
             New batch starting from 29th Nov 2021
           </div>
-          <button className={styles["neet-btn"]}>Sign-Up Now</button>
+          <button className={styles["neet-btn"]}>Sign up Now</button>
         </div>
         <AdLinks />
       </div>

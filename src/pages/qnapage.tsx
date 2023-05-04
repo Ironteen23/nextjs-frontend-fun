@@ -247,10 +247,11 @@ export default function Qnapage() {
                   <br />
                   <br />
                   <div
-                    style={{
-                      borderTop: "1px solid #DCDCDC",
-                      marginLeft: 70,
-                    }}
+                    // style={{
+                    //   borderTop: "1px solid #DCDCDC",
+                    //   marginLeft: 70,
+                    // }}
+                    className={styles["line-divider"]}
                   />
                   <br />
                   <br />

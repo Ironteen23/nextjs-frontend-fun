@@ -200,6 +200,13 @@
           
 }
 
+.line-divider{
+    border-top: 1px solid #DCDCDC;
+    margin-left:100px;
+    width: 90%;
+}
+
+
 .no-results-outer-cont{
     display: flex;
     flex-direction: column;
@@ -220,6 +227,12 @@
                 .sim-ques-head{
                     margin-left: 24px;
                 }
+
+        .line-divider {
+            border-top: 1px solid #DCDCDC;
+            margin-left: 0px;
+            /* width: 100%; */
+        }
 }
 
 @media screen and (max-width:450px) {
